@@ -4,11 +4,12 @@ fn main() {
         .lines()
         .map(|line| {
             line.split_whitespace()
-                .map(|val| val.trim().parse::<i32>().unwrap())
+                .map(|val| val.parse::<i32>().unwrap())
                 .rev()
                 .collect::<Vec<i32>>()
         })
-        .fold(0, |sum, curr| sum + deconstruct(curr.clone()));
+        .map(|x| deconstruct(x))
+        .sum::<i32>();
     println!("{ans}");
 }
 
@@ -22,5 +23,5 @@ fn deconstruct(sequence: Vec<i32>) -> i32 {
             .map(|window| window[1] - window[0])
             .collect::<Vec<i32>>(),
     );
-    new_vec + sequence.iter().rev().nth(0).unwrap()
+    new_vec + sequence.last().unwrap()
 }
