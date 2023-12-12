@@ -139,17 +139,6 @@ fn main() {
             break;
         }
         count += 1;
-        // for a in 0..dists.len() {
-        //     for b in 0..dists[a].len() {
-        //         if let Some(b) = dists[b][a] {
-        //             print!("{b}");
-        //         } else {
-        //             print!(".");
-        //         }
-        //     }
-        //     println!();
-        // }
-        //     println!();
     }
     println!("{}", count - 1);
 }

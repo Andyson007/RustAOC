@@ -115,8 +115,8 @@ fn main() {
         }
         pos = newpos.unwrap();
     }
-    println!("{:?}", positions[0]);
-    println!("{:?}", positions[positions.len() - 1]);
+    // println!("{:?}", positions[0]);
+    // println!("{:?}", positions[positions.len() - 1]);
     let mut inside: Vec<Vec<(bool, bool)>> = found
         .iter()
         .map(|line| {
@@ -216,9 +216,9 @@ fn main() {
           if b.1 {
             count += 1;
           }
-            print!("{}", if b.1 { 1 } else { 0 });
+            // print!("{}", if b.1 { 1 } else { 0 });
         }
-        println!()
+        // println!()
     }
     print!("{count}");
 }

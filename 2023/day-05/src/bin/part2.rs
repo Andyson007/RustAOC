@@ -56,7 +56,6 @@ fn main() {
         }
         seeds = newseeds;
     }
-    println!("{}", seeds.len());
     let min = seeds.iter().map(|x| x.0).min().unwrap();
     println!("{min}");
 }
