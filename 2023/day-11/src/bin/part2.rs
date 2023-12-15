@@ -50,7 +50,7 @@ fn main() {
         }
     }
     let mut sum = 0;
-    let increment:u64 = 1000000;
+    let increment: u64 = 1000000;
     for i in 0..positions.len() {
         for j in (i + 1)..positions.len() {
             if positions[i].0 < positions[j].0 {

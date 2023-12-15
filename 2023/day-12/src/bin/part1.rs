@@ -24,7 +24,7 @@ fn main() {
                             newstr.push('.');
                         }
                         i >>= 1;
-                    } else {
+                   } else {
                         newstr.push(c);
                     }
                 }
