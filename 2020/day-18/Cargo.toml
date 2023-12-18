@@ -1,5 +1,5 @@
 [package]
-name = "day-22"
+name = "day-18"
 version = "0.1.0"
 edition = "2021"
 default-run = "part2"

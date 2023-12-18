@@ -117,6 +117,7 @@ fn main() {
     }
     // println!("{:?}", positions[0]);
     // println!("{:?}", positions[positions.len() - 1]);
+    println!("{found:?}");
     let mut inside: Vec<Vec<(bool, bool)>> = found
         .iter()
         .map(|line| {

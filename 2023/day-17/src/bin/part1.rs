@@ -1,7 +1,9 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 
 fn main() {
-    let input = include_str!("../../example.txt")
+    let dir_map: HashMap<(i16, i16), usize> =
+        HashMap::from([((0, 1), 0), ((0, -1), 1), ((1, 0), 2), ((-1, 0), 3)]);
+    let input = include_str!("../../input.txt")
         .lines()
         .map(|line| {
             line.chars()
@@ -9,52 +11,60 @@ fn main() {
                 .collect::<Vec<u32>>()
         })
         .collect::<Vec<Vec<u32>>>();
-    let mut dists: HashMap<(i16, i16), Vec<((i16, i16), u32)>> = HashMap::new();
-    dists.insert((0, 0), vec![((0, 0), 0)]);
-    let mut next: Vec<((i16, i16), u32)> = Vec::new();
-    next.push(((0, 0), 0));
-    'outer: loop {
-        next.sort_by(|(_, a), (_, b)| b.cmp(a));
-        let curr = *next.last().unwrap();
-        if curr.0 == (input.len() as i16 - 1, input[0].len() as i16 - 1) {
-            println!("{curr:?}");
-            break 'outer;
+    let mut visited: HashSet<((usize, usize), usize)> = HashSet::new();
+    visited.insert(((0, 0), 4));
+    let mut tosearch: Vec<((usize, usize), u32, (i16, i16))> = Vec::new();
+    tosearch.push(((0, 0), 0, (0, 0)));
+    // for _ in 0..3 {
+    loop {
+        // tosearch.sort_by(|(_, a, _), (_, b, _)| b.cmp(a));
+        // for a in tosearch.clone() {
+        //     println!("{a:?}");
+        // }
+        // println!();
+        let curr = tosearch[tosearch.len() - 1];
+        if curr.0 == (input.len() - 1, input[0].len() - 1) {
+            print!("{curr:?}");
+            break;
         }
-        println!("{:?}", curr);
-        next.pop();
+        tosearch.pop();
         for direction in vec![(0, 1), (0, -1), (1, 0), (-1, 0)] {
-            let nextpos = (
-                curr.0 .0 as i16 + direction.0,
-                curr.0 .1 as i16 + direction.1,
-            );
-            if nextpos.0 < 0
-                || nextpos.1 < 0
-                || nextpos.0 == input.len() as i16
-                || nextpos.1 == input[0].len() as i16
-            {
+            if direction == curr.2 || (-direction.0, -direction.1) == curr.2 {
                 continue;
             }
-            let dist = curr.1 + input[nextpos.0 as usize][nextpos.1 as usize];
-            if let Some(x) = dists.get(&nextpos) {
-                if let Some(pos) = (*x).iter().position(|x| *x == curr) {
-                    println!("{:?}", x[pos]);
+            let mut dist = curr.1;
+            for jump in 1..=3 {
+                let position = (
+                    curr.0 .0 as i16 + direction.0 * jump,
+                    curr.0 .1 as i16 + direction.1 * jump,
+                );
+                if position.0 < 0
+                    || position.1 < 0
+                    || position.0 >= input.len() as i16
+                    || position.1 >= input[0].len() as i16
+                {
+                    continue;
                 }
-            } else {
-                let mut pos = curr.0;
-                for _ in 0..5 {
-                  if pos == (0, 0) {
-                    break;
-                  }
-                  if let Some(x) = dists.get(&pos) {
-                      println!("{x:?}");
-                  }
-                  println!("{pos:?}");
+                let position = (position.0 as usize, position.1 as usize);
+                dist += input[position.0][position.1];
+                if visited.contains(&(position, *dir_map.get(&direction).unwrap())) {
+                    continue;
                 }
-                println!();
-                next.push((nextpos, dist));
-                dists.insert(nextpos, vec![(curr.0, dist)]);
+                visited.insert((curr.0, *dir_map.get(&direction).unwrap()));
+                if let Some(pos) = tosearch
+                    .iter()
+                    .position(|a| *a == (position, dist, direction))
+                {
+                    tosearch[pos].1 = dist;
+                } else {
+                    let index = tosearch.iter().position(|x| x.1 <= dist);
+                    match index {
+                        None => tosearch.push((position, dist, direction)),
+                        Some(x) => tosearch.insert(x, (position, dist, direction)),
+                    }
+                    // println!("{index:?} {dist}");
+                }
             }
         }
     }
-    println!("finished");
 }

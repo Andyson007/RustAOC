@@ -1,5 +1,5 @@
 fn main() {
-    let input = include_str!("../../input.txt")
+    let input = include_str!("../../example.txt")
         .split("\r\n\r\n")
         .map(|lines| {
             lines
@@ -10,9 +10,6 @@ fn main() {
         })
         .collect::<Vec<Vec<u8>>>();
     let mut players = (input[0].clone(), input[1].clone());
-    // for i in input.clone() {
-    //   println!("{i:?}");
-    // }
     let vec = loop {
         if players.0.len() == 0 {
             break players.1.clone();
