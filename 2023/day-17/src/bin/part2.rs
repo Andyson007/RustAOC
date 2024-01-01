@@ -37,7 +37,22 @@ fn main() {
                 continue;
             }
             let mut dist = curr.1;
-            for jump in 1..=3 {
+            for jump in 1..4 {
+                let position = (
+                    curr.0 .0 as i16 + direction.0 * jump,
+                    curr.0 .1 as i16 + direction.1 * jump,
+                );
+                if position.0 < 0
+                    || position.1 < 0
+                    || position.0 >= input.len() as i16
+                    || position.1 >= input[0].len() as i16
+                {
+                    continue;
+                }
+                let position = (position.0 as usize, position.1 as usize);
+                dist += input[position.0][position.1] as u32;
+            }
+            for jump in 4..=10 {
                 let position = (
                     curr.0 .0 as i16 + direction.0 * jump,
                     curr.0 .1 as i16 + direction.1 * jump,
