@@ -34,7 +34,5 @@ fn main() {
             }
         }
     }
-    for c in candidates {
-      println!("{c}");
-    }
+    println!("{}", candidates[0]);
 }
