@@ -6,6 +6,7 @@ struct Cube {
     green: u32,
     blue: u32,
 }
+
 fn main() {
     let ans = include_str!("../../input.txt")
         .lines()
