@@ -37,7 +37,7 @@ fn solve(molecule: String, mappings: &HashSet<(&str, &str)>) -> Option<usize> {
     });
 
     while let Some(State { content, cost }) = heap.pop() {
-        println!("{}",content.len());
+        // println!("{}",content.len());
         if content == "e" {
             return Some(cost);
         }

@@ -1,5 +1,7 @@
+use std::collections::HashSet;
+
 fn main() {
-    let input = "flqrgnkx";
+    let input = "oundnydw";
     let mut grid = [0u128; 128];
     for i in 0..128 {
         let mut to_eval = String::from(input);
@@ -27,7 +29,40 @@ fn main() {
             .map(|x| x.iter().fold(0, |a, b| a ^ b))
             .fold(0u128, |sum, curr| sum << 8 | curr as u128)
     }
-    for line in grid {
-      println!("{line:0128b}");
+    let mut count = 0;
+    while grid.iter().any(|x| *x != 0) {
+        count += 1;
+        let mut x = 0;
+        let mut y = 0;
+        for (i, line) in grid.iter().enumerate() {
+            if *line != 0 {
+                y = i;
+                x = line.leading_zeros() as usize;
+                break;
+            }
+        }
+        let mut next = HashSet::from([(x, y)]);
+        grid[y] ^= 1 << (128 - x - 1) as u128;
+        while !next.is_empty() {
+            let mut new = HashSet::new();
+            for pos in next {
+                for dir in [(0, 1), (0, -1), (1, 0), (-1, 0)] {
+                    let newpos = (pos.0 as i8 + dir.0, pos.1 as i8 + dir.1);
+                    if newpos.0 < 0 || newpos.1 < 0 {
+                        continue;
+                    }
+                    let newpos = (newpos.0 as usize, newpos.1 as usize);
+                    if newpos.0 == 128 || newpos.1 == 128 {
+                        continue;
+                    }
+                    if (grid[newpos.1] >> (128 - newpos.0 - 1)) & 1 == 1 {
+                        new.insert(newpos);
+                        grid[newpos.1] ^= 1 << (128 - newpos.0 - 1) as u128;
+                    }
+                }
+            }
+            next = new;
+        }
     }
+    println!("{count}");
 }
