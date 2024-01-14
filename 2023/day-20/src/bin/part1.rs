@@ -26,8 +26,6 @@ fn main() {
         .collect::<HashMap<&str, (char, Vec<&str>, bool, HashMap<&str, bool>)>>();
     for (k, v) in input.clone() {
         for a in v.1 {
-            println!("{a}");
-
             if let Some(x) = input.get(&a) {
                 if x.0 == '&' {
                     input.get_mut(&a).unwrap().3.insert(k, false);
@@ -38,7 +36,6 @@ fn main() {
         }
     }
     let (mut highs, mut lows): (u64, u64) = (0, 0);
-    println!("{input:#?}");
     for _ in 0..1000 {
         lows += broadcaster.len() as u64 + 1;
         let mut signals: Vec<(&str, bool, &str)> = broadcaster

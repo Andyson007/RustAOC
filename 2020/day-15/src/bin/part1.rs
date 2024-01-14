@@ -9,6 +9,5 @@ fn main() {
             vals.push(0);
         }
     }
-    println!("{vals:?}");
     println!("{}", vals[vals.len() - 1]);
 }

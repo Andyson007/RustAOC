@@ -1,23 +1,25 @@
 use std::collections::HashMap;
 
 fn main() {
-    let vals: Vec<usize> = vec![0, 3, 6];
-    let mut values: HashMap<usize, usize> = HashMap::new();
-    for (index, value) in vals.iter().enumerate() {
-        values.insert(*value, index);
-    }
-    let length = vals.len();
+    let mut prevs = [16u64, 12u64, 1u64, 0u64, 15u64, 7u64, 11u64]
+        // let mut prevs = [0, 3, 6]
+        .iter()
+        .enumerate()
+        .map(|(i, v)| (*v as usize, i + 1))
+        .collect::<HashMap<usize, usize>>();
     let mut prev = 0;
-    for i in length..=(2020 + length) {
-        let dist = if let Some(x) = values.get_mut(&prev) {
-            let var = i - *x;
-            *x = i;
-            var
+    let len = 30000000;
+    for i in prevs.len() + 1..30000000 {
+        if i % 1000000 == 0 {
+            println!("{:2.5}%", 100f64 * i as f64 / len as f64);
+        }
+        if let Some(&x) = prevs.get(&prev) {
+            prevs.insert(prev, i);
+            prev = i - x;
         } else {
-            values.insert(prev, i-1);
-            0
-        };
-        prev = dist;
-        println!("{prev}");
+            prevs.insert(prev, i);
+            prev = 0;
+        }
     }
+    println!("{prev}");
 }
