@@ -1,8 +1,8 @@
 [package]
-name = "day-19"
+name = "day-07"
 version = "0.1.0"
 edition = "2021"
-default-run = "day-19"
+default-run = "part1"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

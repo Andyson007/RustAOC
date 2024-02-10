@@ -5,14 +5,6 @@ use std::{
 
 fn main() {
     let mut input = include_str!("../../input.txt").split("\r\n\r\n");
-    //     let mut input = "e => H
-    // e => O
-    // H => HO
-    // H => OH
-    // O => HH
-    //
-    // HOHOHO"
-    //         .split("\n\n");
     let mappings = input
         .next()
         .unwrap()
