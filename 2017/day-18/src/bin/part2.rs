@@ -24,13 +24,6 @@ enum Mode {
 
 fn main() {
     let input = include_str!("../../input.txt")
-//             let input = "snd 1
-// snd 2
-// snd p
-// rcv a
-// rcv b
-// rcv c
-// rcv d"
         .lines()
         .map(|line| {
             let split = line.split_whitespace().collect::<Vec<&str>>();
