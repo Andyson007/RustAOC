@@ -1,5 +1,5 @@
 **/target
 **/*.txt
 **/*.txt
-**/input.*
-**/example.*
+**/input*
+**/example*
