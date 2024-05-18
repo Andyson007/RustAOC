@@ -1,5 +1,9 @@
 #![feature(linked_list_retain)]
-use std::collections::LinkedList;
+use std::{collections::LinkedList, fmt::format};
+
+const DIGITS: [u8; 16] = [
+    b'0', b'1', b'2', b'3', b'4', b'5', b'6', b'7', b'8', b'9', b'a', b'b', b'c', b'd', b'e', b'f',
+];
 
 fn main() {
     const SALT: &[u8] = b"ihaygndm";
@@ -11,14 +15,24 @@ fn main() {
         if limit.is_some_and(|x| i > x) {
             break;
         }
-        let digest = md5::compute([SALT, i.to_string().as_bytes()].concat())
-            .0
-            .into_iter()
-            .flat_map(|x| format!("{:02x}", x).chars().collect::<Vec<char>>());
+        let mut digest = md5::compute([SALT, i.to_string().as_bytes()].concat()).0;
+        for _ in 0..2016 {
+            let a: [u8; 32] = digest
+                .iter()
+                .flat_map(|x| [DIGITS[*x as usize / 16], DIGITS[*x as usize % 16]])
+                .collect::<Vec<u8>>()
+                .try_into()
+                .unwrap();
+            digest = *md5::compute(a);
+        }
         let mut count = -1;
         let mut prev = '\0';
         let mut repeating_char = None;
-        for curr in digest.into_iter().chain(['\0']) {
+        for curr in digest
+            .into_iter()
+            .flat_map(|x| format!("{:02x}", x).chars().collect::<Vec<char>>())
+            .chain(['\0'])
+        {
             if curr == prev {
                 count += 1;
             } else {
@@ -52,7 +66,9 @@ fn main() {
         }
     }
     values.sort();
-    // for (i, value) in values.into_iter().enumerate() {
-    println!("{}", values[63])
-    // }
+    for (i, value) in values.iter().enumerate() {
+        println!("{i}: {value}");
+    }
+    println!("{}", values[63]);
 }
+
