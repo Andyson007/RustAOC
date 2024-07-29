@@ -3,7 +3,7 @@ use std::cmp;
 use itertools::Itertools;
 
 fn main() {
-    let input = include_str!("../../example.txt")
+    let input = include_str!("../../input")
         .lines()
         .map(|line| {
             let line = line.split_whitespace().nth(2).unwrap();
