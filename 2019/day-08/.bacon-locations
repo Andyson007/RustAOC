@@ -1,0 +1,1 @@
+warning /home/andy/code/rustaoc/2019/day-08/src/bin/part2.rs:15:20 the loop variable `row` is only used to index `ans`
