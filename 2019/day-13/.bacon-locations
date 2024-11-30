@@ -1,0 +1,3 @@
+warning /home/andy/code/rustaoc/2019/day-13/src/bin/part2.rs:1:33 unused import: `io`
+warning /home/andy/code/rustaoc/2019/day-13/src/bin/part2.rs:28:25 unused variable: `buf`
+warning /home/andy/code/rustaoc/2019/day-13/src/bin/part2.rs:28:21 variable does not need to be mutable

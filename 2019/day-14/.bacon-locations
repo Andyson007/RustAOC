@@ -1,0 +1,3 @@
+warning /home/andy/code/rustaoc/2019/day-14/src/lib.rs:2:5 fields `inputs` and `outputs` are never read
+warning /home/andy/code/rustaoc/2019/day-14/src/lib.rs:7:5 field `reactions` is never read
+warning /home/andy/code/rustaoc/2019/day-14/src/bin/part1.rs:1:5 unused import: `day_14::Reaction`

@@ -1,6 +1,6 @@
 use itertools::Itertools;
 fn main() {
-    let input: Vec<(char, usize, u32)> = include_str!("../../input.txt")
+    let input: Vec<(char, usize, u32)> = include_str!("../../input")
         .lines()
         .map(|line| {
             let arr = line.split_whitespace().collect::<Vec<&str>>();
