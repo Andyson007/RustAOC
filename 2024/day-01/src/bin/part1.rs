@@ -4,28 +4,20 @@ fn main() {
     println!("{ans}")
 }
 
-fn solve(input: &str) -> u64 {
-    let lines = input
+fn solve(input: &str) -> usize {
+    let (mut left, mut right): (Vec<isize>, Vec<isize>) = input
         .lines()
-        .map(|x| {
-            let arr = x
-                .split_whitespace()
-                .map(|x| x.parse::<i64>().unwrap())
-                .collect::<Vec<_>>();
-            let left = arr[0];
-            let right = arr[1];
-            (left, right)
-        })
-        .collect::<Vec<_>>();
-    let mut left = lines.iter().map(|x| x.0).collect::<Vec<_>>();
-    let mut right = lines.iter().map(|x| x.1).collect::<Vec<_>>();
+        .map(|x| x.split_whitespace().map(|x| x.parse::<isize>().unwrap()))
+        .map(|mut x| (x.next().unwrap(), x.next().unwrap()))
+        .unzip();
+
     left.sort();
     right.sort();
+
     left.iter()
         .zip(right.iter())
-        .inspect(|x| println!("{x:?}"))
         .map(|(l, r)| l.abs_diff(*r))
-        .sum::<u64>()
+        .sum::<usize>()
 }
 
 #[cfg(test)]
