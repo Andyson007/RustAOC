@@ -102,7 +102,6 @@ fn solve(raw: &str) -> usize {
             }
         }
     }
-
     best_visited.len() + 1
 }
 
