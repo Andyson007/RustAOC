@@ -8,28 +8,30 @@ use std::{
 fn main() {
     let input = include_str!("../../input");
     let ans = solve::<71>(input);
-    println!("{},{}", ans.0, ans.1)
+    println!("{},{}", ans.x, ans.y)
 }
 
-fn solve<const N: usize>(raw: &str) -> (usize, usize) {
-    let mut grid = [[true; N]; N];
-    'outer: for (x, y) in raw.lines().map(|line| {
-        let split = line.split_once(',').unwrap();
-        (
-            split.0.parse::<usize>().unwrap(),
-            split.1.parse::<usize>().unwrap(),
-        )
-    }) {
-        grid[y][x] = false;
+fn solve<const N: usize>(raw: &str) -> Pos {
+    let grid = raw
+        .lines()
+        .map(|x| Pos::from_str(x).unwrap())
+        .collect::<Vec<_>>();
+    let mut start = 0;
+    let mut end = grid.len();
+
+    'outer: while start != end {
         let mut poses = BinaryHeap::from([Node {
             pos: Pos::new(0, 0),
             dist: 0,
             dest: Pos::new(N as isize - 1, N as isize - 1),
         }]);
 
+        let mid = (start + end + 1) / 2;
+
         let mut visited = HashSet::new();
         while let Some(next) = poses.pop() {
             if next.pos == next.dest {
+                start = mid;
                 continue 'outer;
             }
             if !visited.insert(next.pos) {
@@ -49,18 +51,18 @@ fn solve<const N: usize>(raw: &str) -> (usize, usize) {
                 {
                     continue;
                 }
-                if grid[new_pos.y as usize][new_pos.x as usize] {
+                if !grid.iter().take(mid).any(|x| *x == new_pos) {
                     poses.push(Node {
                         pos: new_pos,
                         dist: next.dist + 1,
                         dest: next.dest,
                     });
-                }
+                };
             }
         }
-        return (x, y);
+        end = mid - 1;
     }
-    unreachable!()
+    grid[start]
 }
 #[derive(Debug, PartialEq, Eq)]
 struct Node {
@@ -160,10 +162,10 @@ impl SubAssign for Pos {
 
 #[cfg(test)]
 mod test {
-    use crate::solve;
+    use crate::{solve, Pos};
 
     #[test]
     fn example() {
-        assert_eq!(solve::<7>(include_str!("../../example")), (6, 1))
+        assert_eq!(solve::<7>(include_str!("../../example")), Pos::new(6, 1))
     }
 }
