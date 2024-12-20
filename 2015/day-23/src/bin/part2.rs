@@ -96,7 +96,7 @@ fn main() {
         let (newpos, ops) = trips.get(&pos).unwrap();
         for op in ops {
             if let Line::One((command, Val::Char(register))) = op {
-                match *command {
+                match command {
                     "inc" => vals[(*register as u8 - b'a') as usize] += 1,
                     "hlf" => vals[(*register as u8 - b'a') as usize] /= 2,
                     "tpl" => vals[(*register as u8 - b'a') as usize] *= 3,

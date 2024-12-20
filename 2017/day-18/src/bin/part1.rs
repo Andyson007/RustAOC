@@ -22,7 +22,7 @@ enum Mode {
     Jgz,
 }
 fn main() {
-    let input = include_str!("../../input.txt")
+    let input = include_str!("../../input")
         .lines()
         .map(|line| {
             let split = line.split_whitespace().collect::<Vec<&str>>();
