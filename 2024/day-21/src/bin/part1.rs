@@ -34,17 +34,17 @@ fn solve(raw: &str) -> usize {
     raw.lines()
         .map(|line| line.chars().collect::<Vec<_>>())
         .map(|x| {
-            println!("\t{}", x.iter().collect::<String>());
-            let diffs = calc_diffs(&keypad, &x);
+            // println!("\t{}", x.iter().collect::<String>());
+            // let diffs = calc_diffs(&keypad, &x);
             // println!("{diffs:?}");
-            let once = diff_keypad(&diffs, Pos::new(0, 0));
-            println!("{}", once.iter().collect::<String>());
-            let once_diffs = calc_diffs(&arrow_keypad, &once);
+            // let once = diff_keypad(&diffs, Pos::new(0, 0));
+            // println!("{}", once.iter().collect::<String>());
+            // let once_diffs = calc_diffs(&arrow_keypad, &once);
             // println!("{once_diffs:?}");
-            let twice = diff_keypad(&once_diffs, Pos::new(0, 1));
-            println!("{}", twice.iter().collect::<String>());
+            let twice = "<A>Av<<AA>^AA>AvAA^A<vAAA>^A".chars().collect::<Vec<_>>();
+            // println!("{}", twice.iter().collect::<String>());
             let twice_diffs = calc_diffs(&arrow_keypad, &twice);
-            println!("{twice_diffs:?}");
+            // println!("{twice_diffs:?}");
             let three_times = diff_keypad(&twice_diffs, Pos::new(0, 1));
             println!("{}", three_times.iter().collect::<String>());
             let parsed_value = x.into_iter().collect::<String>()[0..3]
