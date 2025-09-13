@@ -6,12 +6,12 @@ enum Move {
 }
 
 fn main() {
-    let input = include_str!("../../input.txt")
+    let input = include_str!("../../input")
         .lines()
-        .nth(0)
+        .next()
         .unwrap()
         .split(",")
-        .map(|m| match m.chars().nth(0).unwrap() {
+        .map(|m| match m.chars().next().unwrap() {
             's' => Move::Spin(
                 m.chars()
                     .skip(1)
@@ -58,14 +58,13 @@ fn main() {
             }
         }
     }
-    let indicies = arr.iter().map(|x| *x as u8 - b'a').collect::<Vec<u8>>();
-    println!("{indicies:?}");
 
     let start = ('a'..).take(len).collect::<Vec<char>>();
     let mut arr = ('a'..).take(len).collect::<Vec<char>>();
     let mut repeat = 0;
 
-    for i in 1.. {
+    loop {
+        repeat += 1;
         for m in &input {
             match m {
                 Move::Exchange(a, b) => {
@@ -89,13 +88,10 @@ fn main() {
                 }
             }
         }
-        println!("{i}: {arr:?}");
         if arr == start {
-            repeat = i;
             break;
         }
     }
-    println!();
     for _ in 0..1000000000 % repeat {
         for m in &input {
             match m {
