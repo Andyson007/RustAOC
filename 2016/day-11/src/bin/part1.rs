@@ -122,7 +122,7 @@ struct State {
 
 impl State {
     fn calc_heuristic(&mut self) {
-        self.heuristic = self.state.iter().enumerate().rev().fold(0, |sum, curr| {
+        self.heuristic = self.state.iter().enumerate().rev().fold(0, |_sum, _curr| {
             // create heuristic function here
             5
         }) + self.count;
