@@ -62,6 +62,7 @@ impl Files {
 }
 
 #[derive(Debug, Copy, Clone)]
+#[allow(unused)]
 struct FileData {
     size: usize,
     used: usize,

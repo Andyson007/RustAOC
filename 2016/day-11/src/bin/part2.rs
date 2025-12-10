@@ -418,15 +418,8 @@ impl<T, H> Eq for Countable<T, H> where H: Fn(&T) -> usize {}
 
 fn main() {
     let input = input();
-    println!("{:?}", State::from(&input).is_valid());
-    println!("curr: {:?}", State::from(&input));
-    for elem in State::from(&input).get_variations() {
-        println!("{elem:?}");
-    }
-    // println!();
     let mut binheap = BinaryHeap::new();
 
-    binheap.clear();
     binheap.push(Countable::new(State::from(&input), State::heuristic));
 
     let mut visited = VisitLookup::new();
@@ -525,22 +518,22 @@ fn input() -> ExplicitState {
                 r#type: Type::Generator,
                 element: Element::Cobalt,
             },
-            Thing {
-                r#type: Type::Microchip,
-                element: Element::Elerium,
-            },
-            Thing {
-                r#type: Type::Generator,
-                element: Element::Elerium,
-            },
-            Thing {
-                r#type: Type::Microchip,
-                element: Element::Dilithium,
-            },
-            Thing {
-                r#type: Type::Generator,
-                element: Element::Dilithium,
-            },
+            // Thing {
+            //     r#type: Type::Microchip,
+            //     element: Element::Elerium,
+            // },
+            // Thing {
+            //     r#type: Type::Generator,
+            //     element: Element::Elerium,
+            // },
+            // Thing {
+            //     r#type: Type::Microchip,
+            //     element: Element::Dilithium,
+            // },
+            // Thing {
+            //     r#type: Type::Generator,
+            //     element: Element::Dilithium,
+            // },
         ]),
         // The second floor contains a polonium-compatible microchip and a promethium-compatible microchip.
         HashSet::from([

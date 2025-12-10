@@ -5,4 +5,9 @@ edition = "2021"
 default-run = "part2"
 
 [dependencies]
+bytemuck = { version = "1.23.2", features = ["derive"] }
+fx-hash = "0.1.0"
 nom = "7.1.3"
+
+[profile.release]
+debug = "line-tables-only"

@@ -1,0 +1,238 @@
+{"dhatFileVersion":2
+,"mode":"heap","verb":"Allocated"
+,"bklt":true,"bkacc":true
+,"tu":"instrs","Mtu":"Minstr"
+,"tuth":500
+,"cmd":"./target/release/part2"
+,"pid":202820
+,"te":56186905294
+,"tg":56186339912
+,"pps":
+ [{"tb":472,"tbk":1
+  ,"tl":166165
+  ,"mb":472,"mbk":1
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":2946,"wb":1426
+  ,"acc":[184,149,-2,136,-4,0,-8,187,-8,90,-8,14,-8,20,-16,14,-8,25,-8,9,-8,3,-8,9,-8,1,-8,9,-8,3,-4,15,14,-3,5,-8,0,-2,1,-6,0,-8,7,-8,8,-8,0,-16,1,-8,0,-8,2,-4,10,-20,0,-8,17,-4,4,-4,3,-8,5,-88,1,-136,0,-8,1]
+  ,"fs":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+  }
+ ,{"tb":360,"tbk":2
+  ,"tl":165178
+  ,"mb":240,"mbk":1
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":7429,"wb":6251
+  ,"fs":[1,17,18,4,5,6,7,8,9,10,11,12,13,14,15,16]
+  }
+ ,{"tb":1024,"tbk":1
+  ,"tl":165243
+  ,"mb":1024,"mbk":1
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":12176,"wb":6144
+  ,"acc":[24,-964,18,-59,16]
+  ,"fs":[1,19,20,21,22,18,4,5,6,7,8,9,10,11,12,13,14,15,16]
+  }
+ ,{"tb":32,"tbk":1
+  ,"tl":382
+  ,"mb":0,"mbk":0
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":32,"wb":56
+  ,"acc":[-8,2,-24,3]
+  ,"fs":[23,24,4,5,6,7,8,9,10,11,12,13,14,15,16]
+  }
+ ,{"tb":152,"tbk":1
+  ,"tl":327
+  ,"mb":0,"mbk":0
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":24,"wb":16
+  ,"acc":[-8,3,-8,2,-136,0]
+  ,"fs":[25,26,27,28,4,5,6,7,8,9,10,11,12,13,14,15,16]
+  }
+ ,{"tb":32,"tbk":1
+  ,"tl":233
+  ,"mb":0,"mbk":0
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":0,"wb":32
+  ,"acc":[-32,1]
+  ,"fs":[23,29,28,4,5,6,7,8,9,10,11,12,13,14,15,16]
+  }
+ ,{"tb":65408,"tbk":9
+  ,"tl":1382476
+  ,"mb":32768,"mbk":1
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":72520,"wb":64320
+  ,"fs":[1,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,16]
+  }
+ ,{"tb":8317288968,"tbk":19
+  ,"tl":56184986591
+  ,"mb":4158652416,"mbk":1
+  ,"gb":4158652416,"gbk":1
+  ,"eb":0,"ebk":0
+  ,"rb":31493959000,"wb":35212035792
+  ,"fs":[1,30,51,52,53,54,55,56,57,39,40,41,42,43,44,45,46,47,48,49,50,16]
+  }
+ ,{"tb":63476,"tbk":1
+  ,"tl":1814718
+  ,"mb":63476,"mbk":1
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":381155,"wb":47678
+  ,"fs":[1,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,39,40,41,42,43,44,45,46,47,48,49,50,16]
+  }
+ ,{"tb":17886995040,"tbk":300824
+  ,"tl":32424869373
+  ,"mb":126848,"mbk":1
+  ,"gb":126848,"gbk":1
+  ,"eb":0,"ebk":0
+  ,"rb":17837143776,"wb":17837143776
+  ,"fs":[1,30,75,76,77,78,79,80,81,39,40,41,42,43,44,45,46,47,48,49,50,16]
+  }
+ ,{"tb":1024,"tbk":1
+  ,"tl":56184345802
+  ,"mb":0,"mbk":0
+  ,"gb":1024,"gbk":1
+  ,"eb":0,"ebk":0
+  ,"rb":42,"wb":42
+  ,"acc":[-2,28,10,-2,6,4,2,-1017,0]
+  ,"fs":[1,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,39,40,41,42,43,44,45,46,47,48,49,50,16]
+  }
+ ,{"tb":4158787880,"tbk":15
+  ,"tl":57787862733
+  ,"mb":3119185952,"mbk":2
+  ,"gb":2079457296,"gbk":1
+  ,"eb":0,"ebk":0
+  ,"rb":11920164202,"wb":3105538526
+  ,"fs":[1,58,59,60,61,62,63,64,65,66,67,68,69,70,71,107,108,109,39,40,41,42,43,44,45,46,47,48,49,50,16]
+  }
+ ,{"tb":1886546880,"tbk":31728
+  ,"tl":3033729898
+  ,"mb":126848,"mbk":1
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":1750978080,"wb":1750978080
+  ,"fs":[1,30,75,76,77,110,111,112,113,39,40,41,42,43,44,45,46,47,48,49,50,16]
+  }
+ ]
+,"ftbl":
+ ["[root]"
+ ,"0x4847810: malloc (in /nix/store/dnaq3qpdbnd56jd45pc5xm4hiadbh5g0-valgrind-3.24.0/libexec/valgrind/vgpreload_dhat-amd64-linux.so)"
+ ,"0x490E0EE: __fopen_internal (in /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6)"
+ ,"0x4924ED2: pthread_getattr_np@@GLIBC_2.32 (in /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6)"
+ ,"0x135D5E: get_stack_start (stack_overflow.rs:331)"
+ ,"0x135D5E: stack_start_aligned (stack_overflow.rs:348)"
+ ,"0x135D5E: install_main_guard_linux (stack_overflow.rs:397)"
+ ,"0x135D5E: install_main_guard (stack_overflow.rs:372)"
+ ,"0x135D5E: init (stack_overflow.rs:132)"
+ ,"0x135D5E: init (mod.rs:48)"
+ ,"0x135D5E: init (rt.rs:107)"
+ ,"0x135D5E: {closure#0} (rt.rs:166)"
+ ,"0x135D5E: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:589)"
+ ,"0x135D5E: try<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:552)"
+ ,"0x135D5E: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)"
+ ,"0x135D5E: std::rt::lang_start_internal (rt.rs:164)"
+ ,"0x113A03: main (in /home/andy/projects/rustaoc/2016/day-22/target/release/part2)"
+ ,"0x490F085: getdelim (in /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6)"
+ ,"0x4925002: pthread_getattr_np@@GLIBC_2.32 (in /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6)"
+ ,"0x490D4CA: _IO_file_doallocate (in /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6)"
+ ,"0x491CFD0: _IO_doallocbuf (in /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6)"
+ ,"0x491ACEB: _IO_file_underflow@@GLIBC_2.2.5 (in /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6)"
+ ,"0x490F0B2: getdelim (in /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6)"
+ ,"0x484F4C9: realloc (in /nix/store/dnaq3qpdbnd56jd45pc5xm4hiadbh5g0-valgrind-3.24.0/libexec/valgrind/vgpreload_dhat-amd64-linux.so)"
+ ,"0x4924DC9: pthread_getattr_np@@GLIBC_2.32 (in /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6)"
+ ,"0x484F2B1: calloc (in /nix/store/dnaq3qpdbnd56jd45pc5xm4hiadbh5g0-valgrind-3.24.0/libexec/valgrind/vgpreload_dhat-amd64-linux.so)"
+ ,"0x492174A: __pthread_attr_extension (in /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6)"
+ ,"0x4921AD7: pthread_attr_setaffinity_np@@GLIBC_2.32 (in /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6)"
+ ,"0x4924E41: pthread_getattr_np@@GLIBC_2.32 (in /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6)"
+ ,"0x4921AF0: pthread_attr_setaffinity_np@@GLIBC_2.32 (in /nix/store/g8zyryr9cr6540xsyg4avqkwgxpnwj2a-glibc-2.40-66/lib/libc.so.6)"
+ ,"0x10F8CC: alloc::raw_vec::finish_grow::<alloc::alloc::Global> (mod.rs:0)"
+ ,"0x11AF67: grow_amortized<alloc::alloc::Global> (mod.rs:664)"
+ ,"0x11AF67: grow_one<alloc::alloc::Global> (mod.rs:571)"
+ ,"0x11AF67: <alloc::raw_vec::RawVec<((usize, usize), part2::FileData)>>::grow_one (mod.rs:340)"
+ ,"0x111F52: push<((usize, usize), part2::FileData), alloc::alloc::Global> (mod.rs:2448)"
+ ,"0x111F52: {closure#0}<&str, ((usize, usize), part2::FileData), char, nom::error::Error<&str>, fn(&str) -> core::result::Result<(&str, ((usize, usize), part2::FileData)), nom::internal::Err<nom::error::Error<&str>>>, nom::character::complete::char::{closure_env#0}<&str, nom::error::Error<&str>>> (mod.rs:245)"
+ ,"0x111F52: parse_lines (part2.rs:283)"
+ ,"0x111F52: parse<33, 30> (part2.rs:144)"
+ ,"0x111F52: part2::main (part2.rs:17)"
+ ,"0x11AD65: call_once<fn(), ()> (function.rs:250)"
+ ,"0x11AD65: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()> (backtrace.rs:152)"
+ ,"0x11AD7B: std::rt::lang_start::<()>::{closure#0} (rt.rs:199)"
+ ,"0x135FB3: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)"
+ ,"0x135FB3: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:589)"
+ ,"0x135FB3: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:552)"
+ ,"0x135FB3: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)"
+ ,"0x135FB3: {closure#0} (rt.rs:168)"
+ ,"0x135FB3: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:589)"
+ ,"0x135FB3: try<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:552)"
+ ,"0x135FB3: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)"
+ ,"0x135FB3: std::rt::lang_start_internal (rt.rs:164)"
+ ,"0x11AEB9: grow_amortized<alloc::alloc::Global> (mod.rs:664)"
+ ,"0x11AEB9: grow_one<alloc::alloc::Global> (mod.rs:571)"
+ ,"0x11AEB9: <alloc::raw_vec::RawVec<part2::Countable<part2::Files<33, 30>, <part2::Files<33, 30>>::heuristic>>>::grow_one (mod.rs:340)"
+ ,"0x11245D: UnknownInlinedFun (mod.rs:2448)"
+ ,"0x11245D: UnknownInlinedFun (mod.rs:686)"
+ ,"0x11245D: solve<33, 30> (part2.rs:28)"
+ ,"0x11245D: part2::main (part2.rs:20)"
+ ,"0x10F1BF: alloc (alloc.rs:93)"
+ ,"0x10F1BF: alloc_impl (alloc.rs:188)"
+ ,"0x10F1BF: allocate (alloc.rs:249)"
+ ,"0x10F1BF: do_alloc<alloc::alloc::Global> (alloc.rs:19)"
+ ,"0x10F1BF: new_uninitialized<alloc::alloc::Global> (mod.rs:1476)"
+ ,"0x10F1BF: fallible_with_capacity<alloc::alloc::Global> (mod.rs:1515)"
+ ,"0x10F1BF: prepare_resize<alloc::alloc::Global> (mod.rs:2584)"
+ ,"0x10F1BF: resize_inner<alloc::alloc::Global> (mod.rs:2782)"
+ ,"0x10F1BF: reserve_rehash_inner<alloc::alloc::Global> (mod.rs:2670)"
+ ,"0x10F1BF: <hashbrown::raw::RawTable<(part2::Files<33, 30>, i32)>>::reserve_rehash::<hashbrown::map::make_hasher<part2::Files<33, 30>, i32, fx_hash::FxBuildHasher>::{closure#0}> (mod.rs:991)"
+ ,"0x113E8B: UnknownInlinedFun (mod.rs:939)"
+ ,"0x113E8B: find_or_find_insert_slot<(part2::Files<33, 30>, i32), alloc::alloc::Global, hashbrown::map::equivalent_key::{closure_env#0}<part2::Files<33, 30>, part2::Files<33, 30>, i32>, hashbrown::map::make_hasher::{closure_env#0}<part2::Files<33, 30>, i32, fx_hash::FxBuildHasher>> (mod.rs:1146)"
+ ,"0x113E8B: find_or_find_insert_slot<part2::Files<33, 30>, i32, fx_hash::FxBuildHasher, alloc::alloc::Global, part2::Files<33, 30>> (map.rs:1812)"
+ ,"0x113E8B: <hashbrown::map::HashMap<part2::Files<33, 30>, i32, fx_hash::FxBuildHasher>>::insert (map.rs:1792)"
+ ,"0x1124DB: insert<part2::Files<33, 30>, i32, fx_hash::FxBuildHasher> (map.rs:1204)"
+ ,"0x1124DB: solve<33, 30> (part2.rs:31)"
+ ,"0x1124DB: part2::main (part2.rs:20)"
+ ,"0x11AE09: grow_amortized<alloc::alloc::Global> (mod.rs:664)"
+ ,"0x11AE09: grow_one<alloc::alloc::Global> (mod.rs:571)"
+ ,"0x11AE09: <alloc::raw_vec::RawVec<part2::Files<33, 30>>>::grow_one (mod.rs:340)"
+ ,"0x112B2C: push<part2::Files<33, 30>, alloc::alloc::Global> (mod.rs:2448)"
+ ,"0x112B2C: get_next<33, 30> (part2.rs:117)"
+ ,"0x112B2C: solve<33, 30> (part2.rs:50)"
+ ,"0x112B2C: part2::main (part2.rs:20)"
+ ,"0x13A6B1: alloc (alloc.rs:93)"
+ ,"0x13A6B1: alloc_impl (alloc.rs:188)"
+ ,"0x13A6B1: allocate (alloc.rs:249)"
+ ,"0x13A6B1: try_allocate_in<alloc::alloc::Global> (mod.rs:476)"
+ ,"0x13A6B1: with_capacity_in<alloc::alloc::Global> (mod.rs:422)"
+ ,"0x13A6B1: with_capacity_in<u8, alloc::alloc::Global> (mod.rs:190)"
+ ,"0x13A6B1: with_capacity_in<u8, alloc::alloc::Global> (mod.rs:815)"
+ ,"0x13A6B1: with_capacity<u8> (mod.rs:495)"
+ ,"0x13A6B1: with_capacity<std::io::stdio::StdoutRaw> (bufwriter.rs:122)"
+ ,"0x13A6B1: with_capacity<std::io::stdio::StdoutRaw> (linewriter.rs:110)"
+ ,"0x13A6B1: new<std::io::stdio::StdoutRaw> (linewriter.rs:90)"
+ ,"0x13A6B1: {closure#0} (stdio.rs:719)"
+ ,"0x13A6B1: {closure#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}> (once_lock.rs:310)"
+ ,"0x13A6B1: {closure#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !> (once_lock.rs:518)"
+ ,"0x13A6B1: std::sync::poison::once::Once::call_once_force::{{closure}} (once.rs:214)"
+ ,"0x110393: std::sys::sync::once::futex::Once::call (futex.rs:176)"
+ ,"0x10FE11: call_once_force<std::sync::once_lock::{impl#0}::initialize::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !>> (once.rs:214)"
+ ,"0x10FE11: std::sync::once_lock::OnceLock<T>::initialize (once_lock.rs:517)"
+ ,"0x137E53: get_or_try_init<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !> (once_lock.rs:396)"
+ ,"0x137E53: get_or_init<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}> (once_lock.rs:310)"
+ ,"0x137E53: stdout (stdio.rs:719)"
+ ,"0x137E53: print_to<std::io::stdio::Stdout> (stdio.rs:1164)"
+ ,"0x137E53: std::io::stdio::_print (stdio.rs:1275)"
+ ,"0x11266F: solve<33, 30> (part2.rs:37)"
+ ,"0x11266F: part2::main (part2.rs:20)"
+ ,"0x1126B7: insert<part2::Files<33, 30>, i32, fx_hash::FxBuildHasher> (map.rs:1204)"
+ ,"0x1126B7: solve<33, 30> (part2.rs:48)"
+ ,"0x1126B7: part2::main (part2.rs:20)"
+ ,"0x112C5C: push<part2::Files<33, 30>, alloc::alloc::Global> (mod.rs:2448)"
+ ,"0x112C5C: get_next<33, 30> (part2.rs:117)"
+ ,"0x112C5C: solve<33, 30> (part2.rs:50)"
+ ,"0x112C5C: part2::main (part2.rs:20)"
+ ]
+}
