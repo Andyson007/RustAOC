@@ -117,11 +117,12 @@ impl Required {
     /// Returns false if this would overpress a button
     /// true if everything is fine
     pub fn sub(&mut self, button: &[usize], amount: u16) -> bool {
-        for b in button {
-            if self.0[*b] < amount {
+        for btn in button {
+            let b = unsafe { self.0.get_unchecked_mut(*btn) };
+            if *b < amount {
                 return false;
             }
-            self.0[*b] -= amount;
+            *b -= amount;
         }
         true
     }
