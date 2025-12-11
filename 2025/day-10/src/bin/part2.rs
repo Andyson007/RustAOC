@@ -25,36 +25,45 @@ pub fn wrap_line(line: &str) -> u16 {
         .map(Button::parse)
         .collect();
     let grid = Required::parse(line.split_whitespace().last().unwrap());
-    solve_parsed_line(grid, &buttons)
+    solve_parsed_line(grid, buttons)
 }
 
-pub fn solve_parsed_line(mut grid: Required, buttons: &[Button]) -> u16 {
+pub fn solve_parsed_line(mut grid: Required, mut buttons: Vec<Button>) -> u16 {
     // returns all buttons which modify the current button and only future ones
-    let get_modifiers = move |led| {
-        buttons
-            .iter()
-            .filter(move |button| button.0.contains(&led))
-            .filter(move |button| button.0.iter().all(|x| *x >= led))
-            .collect()
-    };
-    let modifiers: Vec<_> = (0..grid.0.len()).map(get_modifiers).collect();
-    let mut trivals = 0;
-    for i in 0..grid.0.len() {
-        if buttons.iter().filter(|x| x.0.contains(&i)).count() == 1 {
-            let b = buttons.iter().find(|x| x.0.contains(&i)).unwrap();
-            trivals += grid.0[i];
-            grid.sub(&b.0, grid.0[i]);
+    let modifiers: Vec<_> = (0..grid.0.len())
+        .map(|led| {
+            buttons
+                .iter()
+                .filter(|button| button.0.contains(&led))
+                .filter(|button| button.0.iter().all(|x| *x >= led))
+                .cloned()
+                .collect()
+        })
+        .collect();
+    let mut trivials = 0;
+    let mut changed = true;
+    while changed {
+        changed = false;
+        for i in 0..grid.0.len() {
+            if buttons.iter().filter(|x| x.0.contains(&i)).count() == 1 {
+                let btn_pos = buttons.iter().position(|x| x.0.contains(&i)).unwrap();
+                let b = &buttons[btn_pos];
+                trivials += grid.0[i];
+                grid.sub(&b.0, grid.0[i]);
+                changed = true;
+                buttons.swap_remove(btn_pos);
+            }
         }
     }
-    print!("{trivals}: ");
+    print!("{trivials}: ");
     let mut visited = HashMap::new();
-    solve_step(0, &grid, &modifiers, &mut visited).unwrap() + trivals
+    solve_step(0, &grid, &modifiers, &mut visited).unwrap() + trivials
 }
 
 fn solve_step(
     curr: usize,
     grid: &Required,
-    modifiers: &[Vec<&Button>],
+    modifiers: &[Vec<Button>],
     visited: &mut HashMap<Required, u16>,
 ) -> Option<u16> {
     if let Some(x) = visited.get(grid) {
@@ -80,6 +89,8 @@ fn solve_step(
         .min()
         .map(|x| x + grid.0[curr])
 }
+
+// todo no recurse
 
 #[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Button(Vec<usize>);
@@ -126,6 +137,13 @@ impl Required {
             *b -= amount;
         }
         true
+    }
+    // the inverse function of sub
+    pub fn add(&mut self, button: &[usize], amount: u16) {
+        for btn in button {
+            let b = unsafe { self.0.get_unchecked_mut(*btn) };
+            *b += amount;
+        }
     }
 }
 
@@ -204,7 +222,7 @@ mod test {
     #[test]
     fn test_first() {
         let req = Required(vec![3, 5, 4, 7]);
-        let buttons = [
+        let buttons = vec![
             Button(vec![3]),
             Button(vec![1, 3]),
             Button(vec![2]),
@@ -212,21 +230,21 @@ mod test {
             Button(vec![0, 2]),
             Button(vec![0, 1]),
         ];
-        let ans = solve_parsed_line(req, &buttons);
+        let ans = solve_parsed_line(req, buttons);
         assert_eq!(ans, 10)
     }
 
     #[test]
     fn test_second() {
         let req = Required(vec![7, 5, 12, 7, 2]);
-        let buttons = [
+        let buttons = vec![
             Button(vec![0, 2, 3, 4]),
             Button(vec![2, 3]),
             Button(vec![0, 4]),
             Button(vec![0, 1, 2]),
             Button(vec![1, 2, 3, 4]),
         ];
-        let ans = solve_parsed_line(req, &buttons);
+        let ans = solve_parsed_line(req, buttons);
         assert_eq!(ans, 12)
     }
 
@@ -255,16 +273,16 @@ mod benches {
                     .take(12)
                     .map(wrap_line)
                     .sum::<u16>(),
-               1393 
+                1393
             )
         });
     }
 
-    #[bench]
-    fn example_1(b: &mut Bencher) {
-        #[allow(clippy::iter_nth_zero)]
-        b.iter(|| solve(include_str!("../../input").lines().nth(0).unwrap()));
-    }
+    // #[bench]
+    // fn example_1(b: &mut Bencher) {
+    //     #[allow(clippy::iter_nth_zero)]
+    //     b.iter(|| solve(include_str!("../../input").lines().nth(0).unwrap()));
+    // }
 
     #[bench]
     fn example_2(b: &mut Bencher) {
