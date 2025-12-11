@@ -37,7 +37,7 @@ pub fn solve_parsed_line(mut grid: Required, buttons: &[Button]) -> u16 {
             .filter(move |button| button.0.iter().all(|x| *x >= led))
             .collect()
     };
-    let mut visited = HashMap::new();
+    let modifiers: Vec<_> = (0..grid.0.len()).map(get_modifiers).collect();
     let mut trivals = 0;
     for i in 0..grid.0.len() {
         if buttons.iter().filter(|x| x.0.contains(&i)).count() == 1 {
@@ -47,13 +47,14 @@ pub fn solve_parsed_line(mut grid: Required, buttons: &[Button]) -> u16 {
         }
     }
     print!("{trivals}: ");
-    solve_step(0, &grid, get_modifiers, &mut visited).unwrap() + trivals
+    let mut visited = HashMap::new();
+    solve_step(0, &grid, &modifiers, &mut visited).unwrap() + trivals
 }
 
-fn solve_step<'a>(
+fn solve_step(
     curr: usize,
     grid: &Required,
-    get_modifiers: impl Fn(usize) -> Vec<&'a Button> + Copy,
+    modifiers: &[Vec<&Button>],
     visited: &mut HashMap<Required, u16>,
 ) -> Option<u16> {
     if let Some(x) = visited.get(grid) {
@@ -65,7 +66,7 @@ fn solve_step<'a>(
     if curr == grid.0.len() {
         return None;
     }
-    let available = &get_modifiers(curr);
+    let available = &modifiers[curr];
     Combinations::new(available.len(), grid.0[curr] as usize)
         .filter_map(|combination| {
             let mut grid = grid.clone();
@@ -74,7 +75,7 @@ fn solve_step<'a>(
                     return None;
                 }
             }
-            solve_step(curr + 1, &grid, get_modifiers, visited)
+            solve_step(curr + 1, &grid, modifiers, visited)
         })
         .min()
         .map(|x| x + grid.0[curr])
@@ -254,7 +255,7 @@ mod benches {
                     .take(12)
                     .map(wrap_line)
                     .sum::<u16>(),
-                5
+               1393 
             )
         });
     }
