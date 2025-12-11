@@ -1,0 +1,12 @@
+[package]
+name = "day-10"
+version = "0.1.0"
+edition = "2024"
+default-run = "part2"
+
+[dependencies]
+
+[profile.release]
+debug = true
+lto = "fat"
+panic = "abort"
